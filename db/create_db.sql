@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS bankfraud;
+CREATE DATABASE bankfraud CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

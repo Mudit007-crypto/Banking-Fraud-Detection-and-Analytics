@@ -1,0 +1,50 @@
+erDiagram
+  Customer ||--o{ Account : owns
+  Customer ||--o{ Loan : "applies for"
+  Account ||--o{ Transaction : "has"
+  Transaction ||--o{ FraudScore : "scored by"
+  Employee {
+    int employee_id PK
+    string name
+    enum role
+    string email
+  }
+  Customer {
+    int customer_id PK
+    string name
+    string email
+    string phone
+    string region
+  }
+  Account {
+    int account_id PK
+    int customer_id FK
+    enum account_type
+    decimal balance
+    enum status
+  }
+  Transaction {
+    bigint txn_id PK
+    int account_id FK
+    datetime txn_time
+    enum txn_type
+    decimal amount
+    int counterparty_account
+    enum channel
+    string location
+  }
+  Loan {
+    int loan_id PK
+    int customer_id FK
+    decimal amount
+    decimal interest_rate
+    int tenure_months
+    enum status
+  }
+  FraudScore {
+    bigint score_id PK
+    bigint txn_id FK
+    double anomaly_score
+    bool flagged
+    string reason
+  }

@@ -1,0 +1,5 @@
+region,avg_fraud_prob,flags,scored_rows
+East,0.4941,43.0,433
+West,0.2001,196.0,4680
+North,0.1646,182.0,4572
+South,0.1533,134.0,4352

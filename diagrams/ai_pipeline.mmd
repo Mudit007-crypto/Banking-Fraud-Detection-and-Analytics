@@ -1,0 +1,13 @@
+flowchart LR
+  T[Transactions in MySQL]
+  subgraph F["Feature Builder"]
+    UC1("Amount")
+    UC2("Channel")
+    UC3("Z-Score")
+    UC4("Region")
+  end
+  M[IsolationForest Model]
+  S[FraudScore Table]
+  A[Alerts / Tableau]
+
+  T --> F --> M --> S --> A
