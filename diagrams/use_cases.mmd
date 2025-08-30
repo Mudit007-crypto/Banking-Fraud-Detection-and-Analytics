@@ -1,24 +1,19 @@
+---
+config:
+  layout: elk
+---
 flowchart LR
-  Admin([Admin])
-  Emp([Bank Employee])
-  Cust([Customer])
-
-  subgraph System[Banking System]
-    UC1(Manage accounts)
-    UC2(Manage transactions)
-    UC3(Manage employee roles)
-    UC4(Approve loans)
-    UC5(View customer history)
-    UC6(Deposit/Withdraw/Transfer)
-    UC7(Apply for loan)
-    UC8(Fraud detection + alerts)
+ subgraph System["Banking Fraud Detection & Analytics"]
+        UC1("Manage accounts")
+        UC2("Manage transactions")
+        UC3("Manage employee roles")
+        UC4("Approve / Reject loans")
+        UC5("View customer history")
+        UC6("Deposit / Withdraw / Transfer")
+        UC7("Apply for loan")
+        UC8("Fraud detection & alerts")
   end
-
-  Admin --> UC1
-  Admin --> UC2
-  Admin --> UC3
-  Emp --> UC4
-  Emp --> UC5
-  Cust --> UC6
-  Cust --> UC7
-  UC2 --> UC8
+    Admin(["Admin"]) --> UC1 & UC2 & UC3
+    Emp(["Bank Employee"]) --> UC4 & UC5
+    Cust(["Customer"]) --> UC6 & UC7
+    UC2 --> UC8
